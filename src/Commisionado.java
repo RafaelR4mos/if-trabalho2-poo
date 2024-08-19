@@ -24,9 +24,10 @@ public class Commisionado extends Funcionario {
         this.percentualComissao = percentualComissao;
     }
 
+    
     @Override
     public double calculaSalario() {
-        return this.valorVendas;
+        return (this.valorVendas * this.percentualComissao) / 100;
     }
 
     @Override

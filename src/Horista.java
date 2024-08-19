@@ -2,7 +2,7 @@ public class Horista extends Funcionario {
     private double horasTrabalhadas;
     private double valorHora;
 
-    public Horista(String nome, String cpf, double horasTrabalhadas, double valorHora) {
+    public Horista(double horasTrabalhadas, double valorHora, String nome, String cpf) {
         super(nome, cpf);
         this.horasTrabalhadas = horasTrabalhadas;
         this.valorHora = valorHora;
@@ -31,7 +31,7 @@ public class Horista extends Funcionario {
 
     @Override
     public String toString() {
-        return "\nnome: " + super.getNome()
+        return "\nwnome: " + super.getNome()
                 + "\ncpf: " + super.getCpf()
                 + "\nvalorHora: "  + this.valorHora
                 + "horasTrabalhadas: " + this.horasTrabalhadas;

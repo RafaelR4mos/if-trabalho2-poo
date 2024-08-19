@@ -7,6 +7,15 @@ public class Menu {
     public Menu() {
         this.scanner = new Scanner(System.in);
         this.loja = new Loja();
+        Assalariado assalariado = new Assalariado(2000.00, "João", "222.222.222-11");
+        Commisionado commisionado = new Commisionado(10000, 10, "Fabrício", "111.111.111-11");
+        Horista horista = new Horista(100, 50, "Maria", "333.333.333-33");
+
+        // Salarios folha: 2000 + 1000 + 5000 = 8000
+
+        loja.cadastrarAssalariado(assalariado);
+        loja.cadastrarComissionado(commisionado);
+        loja.cadastrarHorista(horista);
     }
 
     public void exibeMenu() {
@@ -64,7 +73,7 @@ public class Menu {
                     System.out.print("R$ ");
                     double valorPorHora = scanner.nextDouble();
 
-                    Horista horista = new Horista(nome.trim().toUpperCase(), cpf.replaceAll("\\D", ""), horasTrabalhadas, valorPorHora);
+                    Horista horista = new Horista(horasTrabalhadas, valorPorHora, nome.trim().toUpperCase(), cpf.replaceAll("\\D", ""));
                     loja.cadastrarHorista(horista);
                     break;
                 case 3:
@@ -102,7 +111,7 @@ public class Menu {
                     break;
                 case 8:
                     System.out.println("------CALCULAR FOLHA PAGAMENTO------");
-                    System.out.println("calculando folha...");
+                    System.out.println("Valor total: R$ " + loja.calcularFolhaPagamento());
                     break;
                 case 9:
                     break;

@@ -62,4 +62,14 @@ public class Loja {
 
         return comissionados;
     }
+
+    public double calcularFolhaPagamento() {
+        double totalPagamento = 0.0;
+
+        for (Funcionario f : funcionarios) {
+            totalPagamento += f.calculaSalario();
+        }
+
+        return totalPagamento;
+    }
 }
